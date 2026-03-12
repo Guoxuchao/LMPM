@@ -2,14 +2,7 @@
 The architecture of the model.
 
 # 🌟 Overview
-Accurate identification of named entities is a cornerstone for knowledge graph question answering, as it pinpoints the key entity—specifically the head entity—within the input utterance, which serves as the starting point for knowledge graph reasoning. 
 <img width="3989" height="1983" alt="Example of Agricultural KGQA Process Integrating Multimodal Named Entity Recognition" src="https://github.com/user-attachments/assets/34e88ceb-bc5d-40ca-9905-4ae88e511dcd" />
-
-HAPM addresses three key challenges:
-
-1. Models are unable to extract named entities that are only present in images, as they cannot effectively utilize information hidden within visual data.
-2. Existing methods cannot flexibly recognize different entities in the same image when different questions are posed.
-3. Current solutions fail to adaptively balance the contributions from visual and textual inputs.
 
 # 📊 AgriMNE Dataset
 We have provided the AgriMNE dataset, which is a dataset used for agricultural multimodal named entity recognition.
