@@ -1,5 +1,3 @@
-# ================== 高效分层融合LMPM - 主模型训练脚本 ==================
-
 import torch
 from torch import nn
 import torchvision.models as models
@@ -17,7 +15,6 @@ from tabulate import tabulate
 import random
 
 
-# ================== 随机种子设置 ==================
 
 def set_seed(seed):
     """设置随机种子确保可重复性"""
@@ -30,7 +27,6 @@ def set_seed(seed):
     torch.backends.cudnn.benchmark = False
 
 
-# ================== 数据集定义 ==================
 
 class MultiModalDataset(Dataset):
     """多模态数据集（图像+文本）"""
@@ -593,65 +589,5 @@ def train_model(train_json, val_json, test_json, image_root,
     print(f"   训练日志: {log_save_path}")
 
     return model_save_path, topic_to_idx, test_metrics
-
-
-# ================== 主函数 ==================
-
-def main():
-    parser = argparse.ArgumentParser(description='高效分层融合HAPM训练脚本')
-
-    # 数据路径
-    parser.add_argument('--train_json', type=str, default="E:\\SRZ\\CBM\\data\\text\\train.json",
-                        help='训练集JSON文件路径')
-    parser.add_argument('--val_json', type=str, default="E:\\SRZ\\CBM\\data\\text\\val.json",
-                        help='验证集JSON文件路径')
-    parser.add_argument('--test_json', type=str, default="E:\\SRZ\\CBM\\data\\text\\test.json",
-                        help='测试集JSON文件路径')
-    parser.add_argument('--image_root', type=str, default="E:\\SRZ\\CBM\\data\\images",
-                        help='图像根目录路径')
-
-    # 训练参数
-    parser.add_argument('--epochs', type=int, default=80,
-                        help='训练轮数')
-    parser.add_argument('--batch_size', type=int, default=32,
-                        help='批次大小')
-    parser.add_argument('--lr', type=float, default=5e-6,
-                        help='学习率')
-    parser.add_argument('--seed', type=int, default=42,
-                        help='随机种子')
-    parser.add_argument('--save_dir', type=str, default='./model',
-                        help='模型保存目录')
-
-    args = parser.parse_args()
-
-    # 打印配置
-    print("\n" + "=" * 80)
-    print("训练配置")
-    print("=" * 80)
-    print(f"训练集: {args.train_json}")
-    print(f"验证集: {args.val_json}")
-    print(f"测试集: {args.test_json}")
-    print(f"图像目录: {args.image_root}")
-    print(f"训练轮数: {args.epochs}")
-    print(f"批次大小: {args.batch_size}")
-    print(f"学习率: {args.lr}")
-    print(f"随机种子: {args.seed}")
-    print(f"保存目录: {args.save_dir}")
-    print()
-
-    # 开始训练
-    train_model(
-        train_json=args.train_json,
-        val_json=args.val_json,
-        test_json=args.test_json,
-        image_root=args.image_root,
-        epochs=args.epochs,
-        batch_size=args.batch_size,
-        lr=args.lr,
-        seed=args.seed,
-        save_dir=args.save_dir
-    )
-
-
 if __name__ == '__main__':
     main()
