@@ -1,4 +1,4 @@
-<img width="3729" height="2300" alt="HAPM" src="https://github.com/user-attachments/assets/27d09902-628c-4023-a124-d1001684abae" />
+<img alt="LMPM model architecture" src="assets/LMPM.png" />
 The architecture of the model.
 
 # 🌟 Overview
