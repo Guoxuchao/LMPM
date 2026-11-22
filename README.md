@@ -9,7 +9,7 @@ We have provided the AgriMNE dataset, which is a dataset used for agricultural m
 <img width="3740" height="993" alt="Example of image annotation" src="https://github.com/user-attachments/assets/4995493e-e48e-4fc0-a00b-b5f136ac1d46" />
 
 # 📈 Results
-<img width="1677" height="910" alt="table3" src="https://github.com/user-attachments/assets/e2b41b35-8134-4325-99bd-d2c03ae7f955" />
+<img alt="Table 3" src="assets/table3.jpg" />
 
 # 🖼️ Visualization
 <img width="3559" height="1272" alt="Case analysis and weight visualization of the modal quality-aware mechanism" src="https://github.com/user-attachments/assets/77579327-8649-4fc9-ab79-9df1853c08b0" />
